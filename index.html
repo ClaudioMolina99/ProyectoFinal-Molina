@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador de Artes Marciales</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main>
+    <h1>Simulador Inscripción</h1>
+    <form id="formulario-inscripcion">
+      <label for="disciplina">Disciplina:</label>
+      <select id="disciplina" required>
+        <option value="">Seleccionar</option>
+        <option value="Muay Thai">Muay Thai</option>
+        <option value="Karate">Karate</option>
+        <option value="Jiu-Jitsu">Jiu-Jitsu</option>
+      </select>
+      <label for="dias">Días por semana:</label>
+      <select id="dias" required>
+        <option value="">Seleccionar</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+      </select>
+      <label for="turno">Turno:</label>
+      <select id="turno" required>
+        <option value="">Seleccionar</option>
+        <option value="Mañana">Mañana</option>
+        <option value="Tarde">Tarde</option>
+        <option value="Noche">Noche</option>
+      </select>
+      <button type="submit">Calcular precio</button>
+    </form>
+    <section id="resultado"></section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

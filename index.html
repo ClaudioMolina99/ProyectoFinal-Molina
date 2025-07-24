@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simulador de Artes Marciales</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <title>Simulador de Inscripción - Muay Thai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
-  <main>
-    <h1>Simulador Inscripción</h1>
-    <form id="formulario-inscripcion">
-      <label for="disciplina">Disciplina:</label>
-      <select id="disciplina" required>
-        <option value="">Seleccionar</option>
-        <option value="Muay Thai">Muay Thai</option>
-        <option value="Karate">Karate</option>
-        <option value="Jiu-Jitsu">Jiu-Jitsu</option>
-      </select>
-      <label for="dias">Días por semana:</label>
-      <select id="dias" required>
-        <option value="">Seleccionar</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="5">5</option>
-      </select>
-      <label for="turno">Turno:</label>
-      <select id="turno" required>
-        <option value="">Seleccionar</option>
-        <option value="Mañana">Mañana</option>
-        <option value="Tarde">Tarde</option>
-        <option value="Noche">Noche</option>
-      </select>
-      <button type="submit">Calcular precio</button>
-    </form>
-    <section id="resultado"></section>
-  </main>
+
+  <h1>Simulador de Inscripción a Clases de Muay Thai</h1>
+  <p>Seleccioná uno de los packs disponibles:</p>
+
+  <div id="contenedorPacks"></div>
+
+  <!-- Rocky canción -->
+  <p><strong>Inscribite, dale play y entrená como Rocky 🥊</strong></p>
+  <iframe src="https://open.spotify.com/embed/track/7iXYRR70wewzVYzWScm99j?utm_source=generator" 
+    width="300" height="80" frameborder="0" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy">
+  </iframe>
+
   <script src="js/script.js"></script>
 </body>
+
 </html>

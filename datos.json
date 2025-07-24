@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pack Básico",
+    "clases": 4,
+    "precio": 8000
+  },
+  {
+    "id": 2,
+    "nombre": "Pack Intermedio",
+    "clases": 8,
+    "precio": 14500
+  },
+  {
+    "id": 3,
+    "nombre": "Pack Full",
+    "clases": 12,
+    "precio": 20000
+  }
+]

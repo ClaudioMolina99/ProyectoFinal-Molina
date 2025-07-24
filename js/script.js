@@ -1,34 +1,56 @@
-const precios = {
-  "Muay Thai": { "2": 15000, "3": 20000, "5": 25000 },
-  "Karate": { "2": 13000, "3": 17000, "5": 22000 },
-  "Jiu-Jitsu": { "2": 14000, "3": 18000, "5": 23000 }
-};
+let packs = [];
 
-document.getElementById("formulario-inscripcion").addEventListener("submit", function (e) {
-  e.preventDefault();
+// Cargar los packs desde datos.json
+fetch("../datos.json")
+  .then(response => response.json())
+  .then(data => {
+    packs = data;
+    mostrarPacks(packs);
+  })
+  .catch(error => {
+    console.error("Error al cargar los packs:", error);
+  });
 
-  const disciplina = document.getElementById("disciplina").value;
-  const dias = document.getElementById("dias").value;
-  const turno = document.getElementById("turno").value;
+// Mostrar packs en pantalla
+function mostrarPacks(packs) {
+  const contenedor = document.getElementById("contenedorPacks");
+  contenedor.innerHTML = "";
 
-  if (disciplina && dias && turno) {
-    const precio = precios[disciplina][dias];
-
-    document.getElementById("resultado").innerHTML = `
-      <h3>Resumen de inscripción</h3>
-      <p>Disciplina: <strong>${disciplina}</strong></p>
-      <p>Días por semana: <strong>${dias}</strong></p>
-      <p>Turno: <strong>${turno}</strong></p>
-      <p>Precio mensual: <strong>$${precio}</strong></p>
+  packs.forEach(pack => {
+    const div = document.createElement("div");
+    div.classList.add("pack");
+    div.innerHTML = `
+      <h3>${pack.nombre}</h3>
+      <p>Clases: ${pack.clases}</p>
+      <p>Precio: $${pack.precio}</p>
+      <button onclick="seleccionarPack(${pack.id})">Seleccionar</button>
     `;
+    contenedor.appendChild(div);
+  });
+}
 
-    const inscripcion = {
-      disciplina: disciplina,
-      dias: dias,
-      turno: turno,
-      precio: precio
-    };
+// Confirmar selección con SweetAlert2
+function seleccionarPack(id) {
+  const packElegido = packs.find(p => p.id === id);
 
-    localStorage.setItem("ultimaInscripcion", JSON.stringify(inscripcion));
-  }
-});
+  Swal.fire({
+    title: `¿Confirmás el ${packElegido.nombre}?`,
+    text: `Total a pagar: $${packElegido.precio}`,
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, confirmar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      guardarInscripcion(packElegido);
+      Swal.fire('¡Inscripción guardada!', '', 'success');
+    }
+  });
+}
+
+// Guardar inscripción en localStorage
+function guardarInscripcion(pack) {
+  let inscripciones = JSON.parse(localStorage.getItem("inscripciones")) || [];
+  inscripciones.push(pack);
+  localStorage.setItem("inscripciones", JSON.stringify(inscripciones));
+}

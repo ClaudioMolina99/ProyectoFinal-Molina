@@ -16,13 +16,46 @@
 
   <div id="contenedorPacks"></div>
 
-  <!-- Rocky canción -->
-  <p><strong>Inscribite, dale play y entrená como Rocky 🥊</strong></p>
-  <iframe src="https://open.spotify.com/embed/track/7iXYRR70wewzVYzWScm99j?utm_source=generator" 
-    width="300" height="80" frameborder="0" 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy">
-  </iframe>
+  <!-- Sección de inscripción -->
+  <section id="inscripcion">
+    <h2>Inscripción</h2>
+    <p>Completá tus datos y elegí una clase antes de confirmar.</p>
+
+    <form id="formInscripcion">
+      <label for="nombre">Nombre completo</label>
+      <input id="nombre" type="text" placeholder="Ej: Juan Pérez" required minlength="3" />
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="tucorreo@mail.com" required />
+
+      <label for="telefono">Teléfono (solo números)</label>
+      <input id="telefono" type="tel" placeholder="1122334455" required />
+
+      <label for="selectClase">Clase / Pack</label>
+      <select id="selectClase" required>
+        <option value="">Elegí una opción…</option>
+      </select>
+
+      <button id="btnConfirmar" type="submit">Confirmar inscripción</button>
+    </form>
+
+    <div id="mensaje"></div>
+  </section>
+
+  <p><strong>Inscribite, dale play y entrená con nosotros 🥊</strong></p>
+  <div style="display:flex; justify-content:center; align-items:center; gap:20px; margin-top:20px;">
+
+    <!-- GIF izquierda -->
+    <img
+      src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWh1cnJvcW9paTB4Mm40dHYyOGd4NDhvb3hrZXRmZjg3eWZsdG10YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jl4e1vHGnFmbJeuQwq/giphy.gif"
+      alt="Muay Thai GIF" style="width:150px; border-radius:8px;">
+
+    <!-- Rocky derecha -->
+    <iframe src="https://open.spotify.com/embed/track/7iXYRR70wewzVYzWScm99j?utm_source=generator" width="300"
+      height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
 
   <script src="js/script.js"></script>
 </body>

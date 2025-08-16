@@ -16,6 +16,7 @@ p {
   margin-bottom: 30px;
 }
 
+/* ====== Packs ====== */
 #contenedorPacks {
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +30,7 @@ p {
   padding: 20px;
   border-radius: 12px;
   width: 250px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
 
@@ -37,9 +38,7 @@ p {
   transform: scale(1.03);
 }
 
-.pack h3 {
-  color: #444;
-}
+.pack h3 { color: #444; }
 
 .pack p {
   margin: 5px 0;
@@ -58,6 +57,87 @@ p {
   transition: background-color 0.2s ease;
 }
 
-.pack button:hover {
-  background-color: #a72727;
+.pack button:hover { background-color: #a72727; }
+
+/* ====== Formulario de inscripción ====== */
+#inscripcion {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 30px auto;        /* centra la tarjeta en la página */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;       /* centra título y descripción */
+}
+
+#inscripcion h2 {
+  margin-top: 0;
+  color: #d12f2f;
+}
+
+#inscripcion p {
+  margin-bottom: 20px;
+}
+
+/* Labels alineados a la izquierda dentro de la tarjeta centrada */
+#inscripcion label {
+  display: block;
+  margin: 12px 0 4px;
+  font-weight: bold;
+  text-align: left;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Inputs, select y botón centrados y con ancho cómodo */
+#inscripcion input,
+#inscripcion select,
+#inscripcion button {
+  width: 90%;
+  margin: 0 auto 12px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: block;
+}
+
+#inscripcion button {
+  background-color: #d12f2f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#inscripcion button:hover { background-color: #a72727; }
+
+/* Mensaje debajo del form */
+#mensaje {
+  margin-top: 15px;
+  font-size: 14px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Estados de mensaje */
+.msg-ok {
+  background-color: #eaf7ea;
+  border: 1px solid #b6e1b6;
+  color: #1a5c1a;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.msg-error {
+  background-color: #fde8e8;
+  border: 1px solid #f5b5b5;
+  color: #a33a3a;
+  padding: 10px;
+  border-radius: 6px;
 }
